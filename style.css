@@ -109,6 +109,7 @@ p {
 
 .project-image {
     width: 100%; /* Fixed width; adjust as needed */
+    min-width: 100%; /* Ensure the image covers the entire area */
     height: 130px; /* Fixed height based on a 16:9 aspect ratio; adjust as needed */
     object-fit: cover; /* This will cover the area without stretching the image */
     object-position: center top;
@@ -133,7 +134,7 @@ p {
 .team-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -171,6 +172,12 @@ a:hover {
     text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+    .team-member {
+        width: calc(50% - 20px); /* Two members per row on medium screens */
+    }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     body {
@@ -192,5 +199,14 @@ a:hover {
 
     .project {
         width: calc(50% - 20px); /* Two projects per row on smaller screens */
+    }
+
+    .team-member {
+         width: 100%; /* Stack members vertically on small screens */
+     }
+
+    .member-image {
+        width: 80px; /* Slightly smaller images on small screens */
+        height: 80px;
     }
 }
