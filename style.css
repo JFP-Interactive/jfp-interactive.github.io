@@ -1,0 +1,196 @@
+/* Base styles */
+html, body {
+    height: 100%; /* Ensure the html and body elements take up the full viewport height */
+    margin: 0; /* Reset any default margin */
+    /*set color variables*/
+    --primary-color: #60c2ad;
+    --secondary-color: #23374D;
+    --text-color: #f1f1f1;
+    --background-color: #12181B;
+    --light-text-color: #7c7c7e;
+    --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+body {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack child elements vertically */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color); /* Use the background color variable */
+    color: var(--text-color); /* Use the text color variable */
+    line-height: 1.6;
+    padding: 20px; /* Adjusted padding for body */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+header {
+    text-align: center;
+    padding: 40px 0; /* Increased padding for more breathing room */
+}
+
+#logo {
+    max-width: 300px;
+    height: auto;
+}
+
+main {
+    flex-grow: 1; /* Allows main content to expand and push the footer to the bottom */
+    padding: 20px;
+}
+
+#about {
+    max-width: 900px; /* Slightly wider content area */
+    margin: 40px auto; /* Increased margin for more vertical space */
+    background-color: var(--secondary-color); /* Use the secondary color variable */
+    padding: 40px; /* More padding for better readability */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 8px 16px var(--shadow-color); /* Subtle shadow for depth */
+}
+
+footer {
+    background-color: var(--secondary-color); /* Use the secondary color variable */
+    color: var(--light-text-color); /* Use the light text color variable */
+    text-align: center;
+    padding: 20px 0; /* More padding for better spacing */
+    position: relative; /* Changed to relative to avoid positioning issues */
+    width: 100%;
+    margin-top: 40px; /* Ensure there's space before the footer */
+}
+
+/* Typography improvements */
+h1 {
+    font-size: 2.5em; /* Larger heading for impact */
+    margin-bottom: 20px; /* Added space below heading */
+    margin-top: 0;
+    text-align: left;
+}
+
+p {
+    font-size: 1.1em; /* Slightly larger for readability */
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+/* Utility Classes */
+.text-light {
+    color: var(--light-text-color); /* Use the light text color variable */
+}
+
+#projects {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center; /* Centering the content */
+    background-color: #23374D; /* Subtle, modern color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* This will space your project entries nicely */
+    gap: 20px; /* Adds space between the projects */
+}
+
+.project {
+    width: calc(33.333% - 20px); /* Three projects per row - adjust as necessary */
+    margin-bottom: 20px; /* Space below each project */
+    text-decoration: none; /* Removes the underline from links */
+    color: inherit; /* Inherits the text color from the body */
+    border: 3px solid transparent; /* Default transparent border */
+    border-radius: 8px; /* Rounded corners */
+    transition: border-color 0.3s, opacity 0.3s; /* Smooth transition for hover effects */
+}
+
+.project:hover {
+    opacity: 0.8; /* Nice hover effect to indicate interactivity */
+    border-color: var(--primary-color); /* Highlight the border on hover */
+    background-color: var(--secondary-color); /* Change the background color on hover */
+}
+
+.project-image {
+    width: 100%; /* Fixed width; adjust as needed */
+    height: 130px; /* Fixed height based on a 16:9 aspect ratio; adjust as needed */
+    object-fit: cover; /* This will cover the area without stretching the image */
+    object-position: center top;
+    border-radius: 8px; /* Rounded corners for the images */
+    margin-bottom: 8px; /* Space below the image */
+}
+
+.project-title {
+    font-size: 1.2em;
+}
+
+#team {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.team-member {
+    width: calc(33.333% - 20px);
+    text-align: center;
+}
+
+.member-image {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%; /* Creates a circle image */
+    object-fit: cover; /* Ensures the image covers the area */
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    margin: 0 0 10px 0;
+}
+
+.team-member p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--light-text-color);
+}
+
+a {
+    color: var(--primary-color); /* Use the primary color variable for links */
+    text-decoration: none; /* Removes the underline from links */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+a:hover {
+    color: var(--light-text-color); /* Change link color on hover */
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    #about {
+        padding: 20px; /* Less padding in sections for smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller headings on smaller screens */
+    }
+
+    .project-image {
+        width: 100%; /* Adjusted width for smaller screens */
+        height: 120px; /* Adjusted height for smaller screens to maintain a 16:9 aspect ratio */
+    }
+
+    .project {
+        width: calc(50% - 20px); /* Two projects per row on smaller screens */
+    }
+}
